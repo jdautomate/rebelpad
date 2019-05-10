@@ -1,0 +1,12 @@
+{
+  "Gemfile": "5d912ccabf4b1240fe2ed44c3146f76a",
+  "README.md": "fcbde428fba77b6998b0a42f1225a6ec",
+  "Rakefile": "8a664a2f26fbf22c1ec5c11189fef34b",
+  "manifests/init.pp": "6afa8adc0545ae9ae373a033029dd52c",
+  "manifests/params.pp": "951bc8341fe2774d455d0f8fc2808bbd",
+  "metadata.json": "98fc1a1fa1f18f3e3711315a3b2c65b6",
+  "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+  "spec/spec_helper.rb": "d299eefaba54be2696f83cd38e0ba597",
+  "templates/vimrc.erb": "f5a4ae7eab1a03984e4b039ff54facca",
+  "tests/init.pp": "7c4090fd2ff234b1e0203c9b08d5c521"
+}

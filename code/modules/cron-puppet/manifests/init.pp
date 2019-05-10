@@ -11,8 +11,13 @@ class cron-puppet {
   }
 
   cron { 'puppet-apply':
-    ensure => 'present',
-    command => "cd /etc/puppetlabs/puppet
+    ensure  => 'present',
+    command => "cd /etc/puppetlabs ; /usr/bin/git pull",
+    user    => 'root',
+    group   => 'root',
+    hour    => '09',
+    minute  => '15',
+    require => File['post-hook'],
   }
 }
 
