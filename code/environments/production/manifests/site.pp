@@ -2,17 +2,13 @@ node default {
   include ntp
   include tree
   include docker
-  include software::browsers::chrome
-  include social::slack
-  include storage::filezilla
-  include vcsscm::git
+
+  class { 'google_chrome':
+    version => 'stable',
+  }
 
   class { '::vim':
     opt_misc => ['hlsearch','showcmd','showmatch','ignorecase','smartcase','incsearch','autowrite','hidden','number'],
-  }
-
-  exec { 'hyper_install': 
-    command  
   }
 
   archive { '/tmp/hyper_3.0.2_amd64.deb':
@@ -20,13 +16,17 @@ node default {
     ensure => 'present',
     user   => 'justin',
     group  => 'justin',
+    creates => '/tmp/hyper_3.0.2_amd64.deb',
   }
   
   package { 'hyper':
-    ensure  => 'installed',
+    ensure   => 'installed',
     provider => 'dpkg',
     source   => '/tmp/hyper_3.0.2_amd64.deb',
   }
   
+  package {[ 'git', 'wget', 'htop', 'x2goclient' ]:
+    ensure => 'installed',
+  }
   # apt htop, etc.
 }
