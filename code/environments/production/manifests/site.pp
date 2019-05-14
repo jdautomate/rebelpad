@@ -11,6 +11,26 @@ node default {
     opt_misc => ['hlsearch','showcmd','showmatch','ignorecase','smartcase','incsearch','autowrite','hidden','number'],
   }
 
+  file { '/home/justin/plex':
+    ensure => 'directory',
+  }
+
+  file { '/home/justin/keys':
+    ensure => 'directory',
+  }
+
+  file { '/home/justin/infra':
+    ensure => 'directory',
+  }
+
+  archive { '/home/justin/plex/https://knapsu.eu/data/plex/Plex_Media_Player_2.33.1.979-c4087ea7_x64.AppImage':
+    ensure  => 'present',
+    source  => 'https://knapsu.eu/data/plex/Plex_Media_Player_2.33.1.979-c4087ea7_x64.AppImage',
+    user    => 'justin',
+    group   => 'justin',
+    creates => '/home/justin/plex/https://knapsu.eu/data/plex/Plex_Media_Player_2.33.1.979-c4087ea7_x64.AppImage',
+  }
+
   archive { '/tmp/hyper_3.0.2_amd64.deb':
     source => 'https://releases.hyper.is/download/deb',
     ensure => 'present',
@@ -28,5 +48,4 @@ node default {
   package {[ 'git', 'wget', 'htop', 'x2goclient' ]:
     ensure => 'installed',
   }
-  # apt htop, etc.
 }
