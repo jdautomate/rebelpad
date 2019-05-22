@@ -1,4 +1,4 @@
-#For managing personal workstation with puppet
+# For managing personal workstation with puppet
 
 I like trying different Linux distros, this repo configures some basic packages with:
 
